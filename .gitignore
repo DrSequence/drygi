@@ -1,0 +1,22 @@
+# Publish only the static calendar, its ready-to-use database and Pages workflow.
+# Everything else stays local, including collectors, source catalogs and tools.
+/*
+!/.gitignore
+!/README.md
+!/.github/
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/calendar.yml
+!/dist/
+/dist/*
+!/dist/.nojekyll
+!/dist/index.html
+!/dist/assets/
+/dist/assets/*
+!/dist/assets/app.*.js
+!/dist/assets/calendar.*.js
+!/dist/assets/style.*.css
+!/dist/data/
+/dist/data/*
+!/dist/data/events.json

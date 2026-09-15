@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f7f9" />
+    <meta
+      name="description"
+      content="Календарь дрыг на Балканах: даты забегов, места и ссылки на события."
+    />
+    <title>Дрыги — календарь забегов на Балканах</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23e95725'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-family='sans-serif' font-size='30' font-weight='900' fill='%23ffffff'%3Eд%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./assets/style.506eb3247462.css" />
+    <script src="./assets/app.506eb3247462.js" type="module"></script>
+  </head>
+  <body data-layout="compact">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="Дрыги, главная">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <path d="M3 29V17C3 9.27 9.27 3 17 3H31M10 29V17C10 13.13 13.13 10 17 10H31M17 29V19C17 17.9 17.9 17 19 17H31" stroke="currentColor" stroke-width="4"/>
+        </svg>
+        <span>дрыги</span>
+      </a>
+      <div class="masthead-note"><strong>Календарь стартов</strong><span>Балканы и рядом</span></div>
+      <div class="summary" id="summary" aria-live="polite">Загружаем события…</div>
+    </header>
+    <main>
+      <section class="workspace" aria-label="Календарь забегов">
+        <div class="calendar-toolbar">
+          <div class="month-nav">
+            <h1 id="month-title"></h1>
+            <button id="prev" class="icon-button" aria-label="Предыдущий месяц">‹</button>
+            <button id="next" class="icon-button" aria-label="Следующий месяц">
+              ›</button
+            ><button id="today" class="today-button">Сегодня</button>
+          </div>
+          <div id="layout-switch" class="layout-switch" role="group" aria-label="Вид календаря">
+            <button type="button" data-layout="compact" aria-pressed="true">Компактный</button>
+            <button type="button" data-layout="wide" aria-pressed="false">Широкий</button>
+          </div>
+        </div>
+        <nav
+          id="month-shortcuts"
+          class="month-shortcuts"
+          aria-label="Выбрать месяц"
+        ></nav>
+        <div class="filter-row">
+        <div class="type-filter-panel">
+          <div
+            id="type-filters"
+            class="type-filters"
+            role="group"
+            aria-label="Фильтр по типу дрыга"
+            aria-describedby="filter-hint"
+          ></div>
+          <p id="filter-hint" class="filter-hint"></p>
+        </div>
+          <button id="country-toggle" class="country-toggle" type="button" popovertarget="country-menu">🌍 Все страны ▾</button>
+        </div>
+        <p class="mobile-hint">Листай сетку вбок, чтобы увидеть всю неделю →</p>
+        <div
+          class="calendar-scroll"
+          tabindex="0"
+          aria-label="Календарь; на узком экране прокручивается горизонтально"
+        >
+          <div class="calendar-inner">
+            <div class="weekdays" aria-hidden="true">
+              <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span
+              ><span>Пт</span><span>Сб</span><span>Вс</span>
+            </div>
+            <div id="calendar" class="calendar" aria-label="Дни и забеги"></div>
+          </div>
+        </div>
+        <p id="month-count" class="month-count" aria-live="polite"></p>
+      </section>
+      <footer>
+        <span id="updated">Загружаем данные…</span>
+        <span>Базу событий обновляем вручную.</span>
+      </footer>
+    </main>
+    <div id="country-menu" class="country-menu" popover aria-label="Фильтр по странам">
+      <div class="country-menu-header"><strong>Страны</strong><button id="all-countries" type="button">Все страны</button></div>
+      <p>Выбери одну или несколько. Число — события в месяце с учётом типа.</p>
+      <div id="country-options" role="group" aria-label="Выбрать страны"></div>
+    </div>
+    <dialog id="event-dialog">
+      <form method="dialog">
+        <button class="close-button" aria-label="Закрыть карточку">×</button>
+      </form>
+      <div id="event-detail"></div>
+    </dialog>
+    <noscript
+      ><p>
+        Для календаря нужен JavaScript.
+      </p></noscript
+    >
+  </body>
+</html>
