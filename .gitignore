@@ -12,11 +12,13 @@
 /dist/*
 !/dist/.nojekyll
 !/dist/index.html
+!/dist/sitemap.xml
 !/dist/assets/
 /dist/assets/*
 !/dist/assets/app.*.js
 !/dist/assets/calendar.*.js
 !/dist/assets/style.*.css
+!/dist/assets/social-preview.png
 !/dist/data/
 /dist/data/*
 !/dist/data/events.json
